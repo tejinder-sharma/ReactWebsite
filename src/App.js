@@ -1,15 +1,8 @@
-import Home from "./routes/home.component";
+import Home from "./routes/home/home.component";
 
-import { Routes, Route, Outlet } from "react-router-dom";
-
-const Navigation = () => {
-  return (
-    <div>
-      <h2>I am Navigation component.</h2>
-      <Outlet />
-    </div>
-  );
-};
+import { Routes, Route } from "react-router-dom";
+import Navigation from "./routes/navigation/navigation.component";
+import SignIn from "./routes/signin/signin.component";
 
 const Shop = () => {
   return <h1>I am a shop component</h1>;
@@ -20,6 +13,7 @@ function App() {
       <Route path="/" element={<Navigation />}>
         <Route index element={<Home />} />
         <Route path="shop" element={<Shop />} />
+        <Route path="signIn" element={<SignIn/>} />
       </Route>
     </Routes>
   );
